@@ -8,7 +8,7 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "awesome-div.js",
+    filename: "index.js",
   },
   module: {
     rules: [

@@ -1,30 +1,33 @@
-import { h, JSX, render, FunctionalComponent, createRef } from "preact";
 import register from "preact-custom-element";
+import AwesomeDiv from "./components/AwesomeDiv";
+import AwesomeH1 from "./components/AwesomeH1";
+import AwesomeP from "./components/AwesomeP";
 
-type Props = JSX.HTMLAttributes<HTMLDivElement>;
+const elements = [
+  AwesomeDiv,
+  AwesomeP,
+  AwesomeH1
+]
 
-const App: FunctionalComponent = (props: Props) => {
-  const ref = createRef();
-  return (<div ref={ref} {...props}></div>);
-}
+elements.forEach(element => {
+  register(
+    element,
+    "video-hls",
+    [
+      "src",
+      "autoplay",
+      "controls",
+      "width",
+      "height",
+      "loop",
+      "muted",
+      "poster",
+      "preload",
+      "style",
+      "class",
+    ],
+    { shadow: true }
+  );
+})
 
-// render(<App/>, document.getElementById('app') as Element);
-
-register(
-  App,
-  "video-hls",
-  [
-    "src",
-    "autoplay",
-    "controls",
-    "width",
-    "height",
-    "loop",
-    "muted",
-    "poster",
-    "preload",
-    "style",
-    "class",
-  ],
-  { shadow: true }
-);
+// render(<AwesomeDiv/>, document.getElementById('app') as Element);

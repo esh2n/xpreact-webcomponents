@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "run": "yarn webpack && open dist/index.html"
+  },
   "dependencies": {
     "preact": "^10.5.14",
     "preact-custom-element": "^4.2.1"
